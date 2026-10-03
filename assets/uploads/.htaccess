@@ -1,0 +1,11 @@
+# Uploaded files must never be executed
+<IfModule mod_php.c>
+  php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+  php_flag engine off
+</IfModule>
+<FilesMatch "\.(php|phtml|phar|pl|py|cgi)$">
+  Require all denied
+</FilesMatch>
+Options -Indexes -ExecCGI
